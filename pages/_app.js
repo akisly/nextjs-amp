@@ -1,7 +1,8 @@
-import '../styles/globals.css'
+import App from 'next/app'
+import Router from 'next/router'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import * as gtag from '../lib/gtag'
 
-export default MyApp
+Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
+
+export default App
