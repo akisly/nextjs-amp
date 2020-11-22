@@ -1,22 +1,17 @@
 import Head from 'next/head'
-import { useAmp } from 'next/amp'
 import Layout from '../src/components/Layout'
-import Byline from '../src/components/Byline'
 
 export const config = {
-  amp: true,
+  amp: true
 }
 
 export default function IndexPage() {
-  const isAmp = useAmp()
-  
   return (
     <Layout>
       <Head>
-        <title>The Cat</title>
+        <title>Amp page</title>
       </Head>
-      <h1>The Cat (AMP-first Page)</h1>
-      <Byline author="Dan Zajdband" />
+      <h1>AMP Page</h1>
       <p className="caption">Meowwwwwwww</p>
       <amp-img
         alt="Mountains"
@@ -24,19 +19,9 @@ export default function IndexPage() {
         height="368"
         layout="responsive"
         src="https://amp.dev/static/inline-examples/images/mountains.webp"
-      >
-        <amp-img
-          alt="Mountains"
-          fallback=""
-          width="550"
-          height="368"
-          layout="responsive"
-          src="https://amp.dev/static/inline-examples/images/mountains.jpg"
-        />
-      </amp-img>
+      />
       <p>
-        Cat ipsum dolor <a href={isAmp ? '/dog?amp=1' : '/dog'}>sit amet</a>,
-        eat grass, throw it back up but refuse to leave cardboard box or groom
+        Cat ipsum dolor eat grass, throw it back up but refuse to leave cardboard box or groom
         yourself 4 hours - checked, have your beauty sleep 18 hours - checked,
         be fabulous for the rest of the day - checked!. Hide from vacuum
         cleaner. Chirp at birds chew foot chase the pig around the house and
